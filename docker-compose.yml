@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  kronok_frontend:
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    image: node-18.16/rpg-discord-bot
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./:/src/app
+    working_dir: /src/app
+    command: 'npm run serve'
